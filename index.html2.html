@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>MySpace-ish Personal Home</title>
+  <link rel="stylesheet" href="style.css?v=20260622" />
+</head>
+<body>
+  <div class="ambient-stars" aria-hidden="true"></div>
+  <div class="page-shell">
+    <div class="desktop-bg">
+      <header class="xp-bar">
+        <div class="xp-title">
+          <span class="window-led" aria-hidden="true"></span>
+          My Personal Homepage
+        </div>
+        <div class="xp-actions" aria-label="Window controls">
+          <span>_</span>
+          <span>[]</span>
+          <span>x</span>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="left-column">
+          <div class="retro-box profile-box">
+            <div class="box-title">* About Me *</div>
+            <div class="profile-content">
+              <div class="avatar-frame">
+                <img id="profile-avatar" class="avatar" src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar do Discord" />
+              </div>
+              <div>
+                <h2 id="profile-name">Carregando perfil...</h2>
+                <p><strong>From:</strong> Portugal, Porto</p>
+                <div class="profile-tags" aria-label="Profile tags">
+                  <span>web</span>
+                  <span>music</span>
+                  <span>steam</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="retro-box music-box">
+            <div class="box-title">:: Music Player ::</div>
+            <div class="music-player">
+              <div class="equalizer" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="track-info">
+                <div id="now-playing">Defyer - Feel It</div>
+                <div id="player-status">Pronto para tocar</div>
+              </div>
+            </div>
+            <div class="player-controls" aria-label="Music controls">
+              <button id="music-start" type="button">Start</button>
+              <button id="music-pause" type="button">Pause</button>
+              <button id="music-restart" type="button">Restart</button>
+            </div>
+            <div class="player-progress">
+              <span id="music-current-time">0:00</span>
+              <input id="music-progress" type="range" min="0" max="100" value="0" step="0.1" aria-label="Music progress" />
+              <span id="music-duration">0:00</span>
+            </div>
+            <div class="player-volume">
+              <span>Vol</span>
+              <input id="music-volume" type="range" min="0" max="1" value="0.75" step="0.01" aria-label="Music volume" />
+            </div>
+            <audio id="bg-audio" preload="metadata"></audio>
+          </div>
+
+          <div class="retro-box">
+            <div class="box-title">:: Blurbs ::</div>
+            <p>Ola! Eu gosto de criar sites, ouvir musica, jogar no Steam e ficar online ate ao amanhecer.</p>
+            <p>Se quiseres trocar ideias, manda um oi no Discord ou joga comigo.</p>
+          </div>
+
+          <div class="retro-box">
+            <div class="box-title">:: Favorite Links ::</div>
+            <ul class="link-list">
+              <li><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+              <li><a href="https://store.steampowered.com" target="_blank" rel="noopener noreferrer">Steam</a></li>
+              <li><a href="https://discord.com" target="_blank" rel="noopener noreferrer">Discord</a></li>
+            </ul>
+          </div>
+
+          <div class="retro-box theme-box">
+            <div class="box-title">:: Theme Select ::</div>
+            <div class="theme-grid" aria-label="Theme select">
+              <button class="theme-option is-active" type="button" data-theme-choice="default">
+                <span class="theme-swatch default"></span>
+                Aqua Pop
+              </button>
+              <button class="theme-option" type="button" data-theme-choice="dark-aero">
+                <span class="theme-swatch dark-aero"></span>
+                Dark Aero
+              </button>
+              <button class="theme-option" type="button" data-theme-choice="orange-aero">
+                <span class="theme-swatch orange-aero"></span>
+                Orange Aero
+              </button>
+              <button class="theme-option" type="button" data-theme-choice="green-aero">
+                <span class="theme-swatch green-aero"></span>
+                Green Aero
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <aside class="right-column">
+          <div class="retro-box counter-box">
+            <div class="box-title">:: Visitor Counter ::</div>
+            <div id="visitor-count">0</div>
+            <div class="counter-label">visits</div>
+          </div>
+
+          <div class="retro-box gif-box">
+            <img class="gif" src="13199.gif" alt="" />
+          </div>
+
+          <div class="retro-box">
+            <div class="box-title">:: Discord ::</div>
+            <div id="discord-card">
+              <div id="discord-status" class="discord-status">A carregar status...</div>
+              <div id="discord-activity" class="discord-activity">A carregar presenca...</div>
+            </div>
+          </div>
+
+          <div class="retro-box">
+            <div class="box-title">:: Steam ::</div>
+            <div id="steam-card">
+              <span class="loading">A carregar Steam...</span>
+            </div>
+          </div>
+        </aside>
+      </main>
+
+      <section class="footer-banner">
+        <marquee behavior="scroll" direction="left">Welcome to my corner of the web! Thanks for visiting!</marquee>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js?v=20260622"></script>
+</body>
+</html>

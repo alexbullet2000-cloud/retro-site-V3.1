@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: retro-personal-homepage
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: STEAM_ID
+        value: 76561199145094521
+      - key: DISCORD_USER_ID
+        value: 1230904398742294660
+      - key: STEAM_API_KEY
+        sync: false

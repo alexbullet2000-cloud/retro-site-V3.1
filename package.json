@@ -1,0 +1,13 @@
+{
+  "name": "retro-personal-homepage",
+  "version": "1.0.0",
+  "description": "A retro 2000s personal homepage with Node.js backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "express": "^4.19.0"
+  }
+}
