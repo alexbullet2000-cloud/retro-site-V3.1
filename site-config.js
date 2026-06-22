@@ -1,0 +1,1 @@
+window.SOUNDTRACK_ASSET_BASE = '';

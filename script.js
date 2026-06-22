@@ -308,9 +308,21 @@ const BLURB_TRANSLATIONS = {
 
 const isFileMode = window.location.protocol === 'file:';
 const API_BASE = isFileMode ? 'http://localhost:3000' : '';
+const SOUNDTRACK_ASSET_BASE = String(window.SOUNDTRACK_ASSET_BASE || '').replace(/\/$/, '');
 
 function apiUrl(path) {
   return API_BASE ? `${API_BASE}${path}` : path.replace(/^\//, '');
+}
+
+function soundtrackAssetUrl(path) {
+  if (!path) return '';
+
+  const relativePath = String(path).replace(/^\//, '');
+  if (SOUNDTRACK_ASSET_BASE) {
+    return `${SOUNDTRACK_ASSET_BASE}/${relativePath.replace(/^assets\/soundtracks\//, '')}`;
+  }
+
+  return isFileMode ? `${API_BASE}/${relativePath}` : relativePath;
 }
 
 function getStoredTheme() {
@@ -429,7 +441,7 @@ function buildAllTracks(games) {
 
 async function loadSoundtrackManifest() {
   try {
-    const response = await fetch(apiUrl('/assets/soundtracks/manifest.json'), { cache: 'no-store' });
+    const response = await fetch(soundtrackAssetUrl('assets/soundtracks/manifest.json'), { cache: 'no-store' });
     if (!response.ok) throw new Error('Manifest unavailable');
     const manifest = await response.json();
     if (!Array.isArray(manifest) || manifest.length === 0) throw new Error('Manifest empty');
@@ -465,7 +477,7 @@ function syncProgress() {
 
 function getTrackUrl(track) {
   if (!track) return '';
-  return isFileMode ? `${API_BASE}/${track.src}` : track.src;
+  return soundtrackAssetUrl(track.src);
 }
 
 function getCurrentTrack() {
@@ -496,7 +508,7 @@ function setCover(track) {
   musicCoverFallback.textContent = track.gameShortTitle;
   musicCover.classList.remove('is-loaded');
   musicCover.alt = `${track.gameTitle} title`;
-  musicCover.src = isFileMode ? `${API_BASE}/${track.gameImage}` : track.gameImage;
+  musicCover.src = soundtrackAssetUrl(track.gameImage);
 }
 
 function updateSoundtrackUi() {
@@ -591,7 +603,7 @@ function renderSoundtrackLibrary() {
         ${ALL_TRACKS.filter((track) => track.gameId === game.id).map((track) => `
           <button class="track-card" type="button" data-track-id="${escapeHtml(track.id)}">
             <span class="track-thumb">
-              <img src="${escapeHtml(track.gameImage)}" alt="" loading="lazy" onerror="this.remove()" />
+              <img src="${escapeHtml(soundtrackAssetUrl(track.gameImage))}" alt="" loading="lazy" onerror="this.remove()" />
               <span>${escapeHtml(track.gameShortTitle)}</span>
             </span>
             <span class="track-copy">
