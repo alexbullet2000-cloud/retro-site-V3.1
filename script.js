@@ -165,6 +165,128 @@ let SOUNDTRACKS = [
     ]
   }
 ];
+SOUNDTRACKS = [
+  {
+    id: 'tekken-3',
+    title: 'Tekken 3',
+    shortTitle: 'T3',
+    folder: 'tekken-3',
+    cover: 'assets/soundtracks/tekken-3/title.png',
+    tracks: [
+      { title: 'Game Over', file: 'slus-00402-118-nobuyoshi-sano-game-over.mp3' }
+    ]
+  },
+  {
+    id: 'tekken-4',
+    title: 'Tekken 4',
+    shortTitle: 'T4',
+    folder: 'tekken-4',
+    cover: 'assets/soundtracks/tekken-4/title.jpg',
+    tracks: [
+      { title: 'Quadra Introduction', file: 'quadra-introduction.mp3' }
+    ]
+  },
+  {
+    id: 'tekken-5',
+    title: 'Tekken 5',
+    shortTitle: 'T5',
+    folder: 'tekken-5',
+    cover: 'assets/soundtracks/tekken-5/title.jpg',
+    tracks: [
+      { title: 'Tekken 3 BGM18', file: 'tekken-3-bgm18.mp3' }
+    ]
+  },
+  {
+    id: 'tekken-7',
+    title: 'Tekken 7',
+    shortTitle: 'T7',
+    folder: 'tekken-7',
+    cover: 'assets/soundtracks/tekken-7/title.jpg',
+    tracks: [
+      { title: "Nina's Ending", file: '34-nina-s-ending.flac' }
+    ]
+  },
+  {
+    id: 'tekken-8',
+    title: 'Tekken 8',
+    shortTitle: 'T8',
+    folder: 'tekken-8',
+    cover: 'assets/soundtracks/tekken-8/title.jpg',
+    tracks: [
+      { title: 'My Last Stand', file: 'my-last-stand.mp3' }
+    ]
+  },
+  {
+    id: 'street-fighter-2',
+    title: 'Street Fighter II',
+    shortTitle: 'SF2',
+    folder: 'street-fighter-2',
+    cover: 'assets/soundtracks/street-fighter-2/title.png',
+    tracks: [
+      { title: 'Fight!', file: 'fight.mp3' }
+    ]
+  },
+  {
+    id: 'street-fighter-3',
+    title: 'Street Fighter III',
+    shortTitle: 'SF3',
+    folder: 'street-fighter-3',
+    cover: 'assets/soundtracks/street-fighter-3/title.webp',
+    tracks: [
+      { title: 'VS', file: 'o51-vs.mp3' }
+    ]
+  },
+  {
+    id: 'street-fighter-4',
+    title: 'Street Fighter IV',
+    shortTitle: 'SF4',
+    folder: 'street-fighter-4',
+    cover: 'assets/soundtracks/street-fighter-4/title.png',
+    tracks: [
+      { title: 'VS Screen Normal', file: 'hideyuki-fukasawa-vs-screen-normal.mp3' }
+    ]
+  },
+  {
+    id: 'super-street-fighter-4',
+    title: 'Super Street Fighter IV',
+    shortTitle: 'SSF4',
+    folder: 'super-street-fighter-4',
+    cover: 'assets/soundtracks/super-street-fighter-4/title.webp',
+    tracks: [
+      { title: 'Synth BGM 8FR', file: 'synth-s-bgm-8fr-wav.mp3' }
+    ]
+  },
+  {
+    id: 'street-fighter-5',
+    title: 'Street Fighter V',
+    shortTitle: 'SF5',
+    folder: 'street-fighter-5',
+    cover: 'assets/soundtracks/street-fighter-5/title.jpg',
+    tracks: [
+      { title: 'Game Over', file: '25-game-over.mp3' }
+    ]
+  },
+  {
+    id: 'street-fighter-5-arcade-edition',
+    title: 'Street Fighter V Arcade Edition',
+    shortTitle: 'SFVAE',
+    folder: 'street-fighter-5-arcade-edition',
+    cover: 'assets/soundtracks/street-fighter-5-arcade-edition/title.svg',
+    tracks: [
+      { title: 'Versus Arcade Edition', file: '04-versus-arcade-edition.mp3' }
+    ]
+  },
+  {
+    id: 'sfxtekken',
+    title: 'Street Fighter X Tekken',
+    shortTitle: 'SFXT',
+    folder: 'sfxtekken',
+    cover: 'assets/soundtracks/sfxtekken/title.jpg',
+    tracks: [
+      { title: 'VS Screen', file: '04-vs-screen.mp3' }
+    ]
+  }
+];
 let ALL_TRACKS = buildAllTracks(SOUNDTRACKS);
 let activeGameId = SOUNDTRACKS[0]?.id || '';
 let currentTrackIndex = 0;
