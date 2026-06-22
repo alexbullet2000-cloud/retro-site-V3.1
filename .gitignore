@@ -1,3 +1,9 @@
 node_modules/
 .env
 data/
+*.log
+*.zip
+deploy-*/
+deploy-site*.zip
+server-start.*.log
+server-*.log

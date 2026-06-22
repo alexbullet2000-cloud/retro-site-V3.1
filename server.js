@@ -58,13 +58,16 @@ app.use((req, res, next) => {
   if (
     req.path.startsWith('/api/')
     || req.path === '/'
-    || /\.(html|js|css|json|mp3|flac|ogg|wav|m4a|png|jpg|jpeg|webp|svg)$/i.test(req.path)
+    || /\.(html|json)$/i.test(req.path)
   ) {
     noStoreHeaders(res);
   }
   next();
 });
-app.use(express.static(STATIC_DIR));
+app.use(express.static(STATIC_DIR, {
+  etag: true,
+  maxAge: '1d'
+}));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(STATIC_DIR, 'index.html'));
