@@ -165,7 +165,7 @@ let SOUNDTRACKS = [
     ]
   }
 ];
-SOUNDTRACKS = [
+const OPTIMIZED_SOUNDTRACKS = [
   {
     id: 'tekken-3',
     title: 'Tekken 3',
@@ -310,7 +310,7 @@ const isFileMode = window.location.protocol === 'file:';
 const API_BASE = isFileMode ? 'http://localhost:3000' : '';
 
 function apiUrl(path) {
-  return `${API_BASE}${path}`;
+  return API_BASE ? `${API_BASE}${path}` : path.replace(/^\//, '');
 }
 
 function getStoredTheme() {
